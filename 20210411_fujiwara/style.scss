@@ -1,0 +1,446 @@
+/*
+Theme Name:wp-theme
+Theme URL: テーマのサイトのURL
+Description: テーマの説明
+Author: テーマの作者
+Version: テーマのバージョン
+Tags: テーマの特徴を表すタグ（カンマ区切り/オプション）
+License: テーマのライセンス
+License URI: テーマのライセンスのURL
+*/
+
+
+$maincolor: #ff1493;
+$backgroundcolor: #f5f5f5;
+$h2fontsize: 20px;
+
+.header {
+  &__img {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    & a {
+      text-decoration: none;
+      & img {
+        width: 100%;
+      }
+    }
+  }
+  &__menu {
+    margin: auto;
+    width: 40%;
+    & ul {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      & li {
+        list-style: none;
+        & a {
+          text-decoration: none;
+          color: $maincolor;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .header {
+    &__menu {
+      display: none;
+    }
+  }
+}
+
+main {
+  background-color: $backgroundcolor;
+}
+
+.main__section1 {
+  margin-top: 30px;
+  height: 350px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url(img/media__firstview.png);
+  color: white;
+  font-size: 50px;
+  line-height: 70px;
+  font-family: "Architects Daughter", cursive;
+  text-align: center;
+}
+
+.main__section2 {
+  margin-top: 50px;
+  &-title {
+    // width: 100%;
+    // display: block;
+    margin-left: 60px;
+    font-size: $h2fontsize;
+    color: $maincolor;
+    margin-bottom: -30px;
+    position: relative;
+  }
+  &-title::before {
+    content: "New Post";
+    font-size: 6px;
+    position: absolute;
+    top: -20px;
+    font-family: "Architects Daughter", cursive;
+  }
+
+  &-content {
+    display: flex;
+    // width: 100%;
+    &-inner {
+      height: 300px;
+      width: 70%;
+      display: flex;
+      // justify-content: space-around;
+      // align-items:center;
+      flex-wrap: wrap;
+      // display: block;
+      padding: 30px;
+      &-card {
+        width: 28%;
+        height: auto;
+        // border: solid 1px;
+        border-radius: 10%;
+        overflow: hidden;
+        background-color: white;
+        margin: 15px;
+        & a {
+          text-decoration: none;
+          color: $maincolor;
+        }
+
+        &-img {
+          position: relative;
+          &-title {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            display: inline-block;
+            // border: solid;
+            background-color: $maincolor;
+            padding: 8px 15px;
+            color: white;
+          }
+          & img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        &-sentence {
+          padding: 10px;
+          & p {
+            padding: 5px;
+            line-height: 25px;
+            margin-bottom: 10px;
+            height: auto;
+            font-weight: bold;
+            color: $maincolor;
+          }
+          & small {
+            font-size: 10px;
+            padding-left: 10px;
+            margin-bottom: 0px;
+            color: $maincolor;
+          }
+        }
+      }
+    }
+    &-aside {
+      width: 30%;
+      &-content {
+        margin-top: 33px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        &-card {
+          width: 80%;
+          border-radius: 10%;
+          overflow: hidden;
+          background-color: white;
+          // display: block;
+          margin: 10px;
+          & img {
+            width: 100%;
+          }
+          &-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            // height: 100px;
+            &-block {
+              border-radius: 50%;
+              background-color: $maincolor;
+              width: 150px;
+              height: 150px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-top: 15px;
+              margin-bottom: 15px;
+              & img {
+                width: 100%;
+                // margin-top: 40px;
+              }
+            }
+          }
+          &-title {
+            text-align: center;
+            padding: 10px;
+            font-size: $h2fontsize;
+            color: $maincolor;
+          }
+          &-text {
+            padding: 15px;
+            line-height: 25px;
+          }
+          &-category {
+            padding: 30px 10px;
+            font-size: 25px;
+            color: $maincolor;
+          }
+          &-list {
+            & a {
+              text-decoration: none;
+              color: black;
+            }
+            &-arrow {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 5px 15px;
+              list-style: none;
+              border-bottom: solid 0.5px #f5f5f5;
+              & li {
+                line-height: 30px;
+              }
+              & img {
+                width: 8%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.main__category {
+  margin-top: 30px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // background-image: url(img/media__firstview.png);
+  background-color: $maincolor;
+  color: white;
+  font-size: 50px;
+  line-height: 70px;
+  font-family: "Architects Daughter", cursive;
+  text-align: center;
+}
+
+@media screen and (max-width: 760px) {
+  .main__section1 {
+    background: url(img/media__firstview-sp.svg);
+    height: 550px;
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .main__section2 {
+    &-title {
+      margin-left: 20px;
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin-top: 40px;
+        height: auto;
+        padding: 0px;
+        &-card {
+          width: 90%;
+          height: auto;
+        }
+      }
+      &-aside {
+        width: 100%;
+        padding-bottom: 40px;
+        &-content {
+          width: 100%;
+          flex-direction: row;
+          &-card {
+            width: 90%;
+            margin-top: 20px;
+            // margin-left: 30px;
+
+            & img {
+              width: 100%;
+            }
+            // &-category {
+            // }
+            &-list {
+              &-arrow {
+                & img {
+                  width: 10%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  // padding: 20px;
+  // display: flex;
+  // justify-content: space-around;
+  &__div {
+    text-align: center;
+    &-small {
+      // margin-left: 350px;
+      display: inline-block;
+      text-align: center;
+      padding: 20px;
+      font-size: 15px;
+      color: #2f4f4f;
+    }
+    &-p {
+      display: inline-block;
+      text-align: center;
+      margin-left: -15px;
+      font-size: 15px;
+      color: #2f4f4f;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .footer {
+    &__div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      &-small {
+        width: 100%;
+        font-size: 12px;
+        padding: 30px 0px;
+      }
+      &-p {
+        width: 100%;
+        display: block;
+        background-color: $backgroundcolor;
+        padding: 30px 0px;
+        font-size: 12px;
+        text-align: center;
+        color: #2f4f4f;
+        margin: 0px;
+      }
+    }
+  }
+}
+
+// ここから固定ページ
+
+.page {
+  margin-top: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  &__content {
+    margin: auto;
+    width: 65%;
+    background-color: white;
+    border-radius: 3%;
+    & a {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 45%;
+      background-color: $maincolor;
+      color: white;
+      text-decoration: none;
+      margin: 20px 20px;
+    }
+    & h2 {
+      color: $maincolor;
+      font-size: 33px;
+      line-height: 50px;
+      margin: 20px 20px;
+    }
+    & small {
+      color: $maincolor;
+      margin: 20px 20px;
+      display: inline-block;
+    }
+    &-img {
+      border-radius: 10px;
+      overflow: hidden;
+      & img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    & p {
+      margin: 20px 20px;
+      color: $maincolor;
+      line-height: 30px;
+    }
+    & h3 {
+      margin: 20px 20px;
+      color: $maincolor;
+      font-size: 25px;
+    }
+    & h4 {
+      margin: 20px 20px;
+      color: $maincolor;
+      font-size: 20px;
+      border-left: 8px solid;
+      padding-left: 10px;
+      // height: 30px;
+      line-height: 30px;
+    }
+    & h5 {
+      margin: 20px 20px;
+      color: $maincolor;
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .page {
+    &__content {
+      width: 90%;
+      & h2 {
+        font-size: 25px;
+        // line-height: 20px;
+      }
+      & h3 {
+        // font-size: 20px;
+        line-height: 35px;
+      }
+      & h4 {
+        // font-size: 15px;
+        line-height: 35px;
+      }
+      & h5 {
+        // font-size: 15px;
+        line-height: 35px;
+      }
+    }
+  }
+}
